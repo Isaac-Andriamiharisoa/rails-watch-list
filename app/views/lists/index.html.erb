@@ -1,0 +1,14 @@
+<div class="category_item_container">
+  <% @lists.each do |list| %>
+  <%= link_to list[:name], list_path(list), :class=>"category_item" %>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @movies.each do |movie| %>
+        <div class="col-3 card-list", style="background-image: url('<%= movie[:poster_url] %>');">
+        </div>
+      <% end %>
+  </div>
+</div>

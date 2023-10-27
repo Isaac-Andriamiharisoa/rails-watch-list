@@ -1,0 +1,17 @@
+<div class="container bg-light shadow-sm p-5">
+  <div class="mb-5 justify-content-between w-100">
+    <h1 class="col-5">List: <%= @list[:name] %></h1>
+    <%= link_to "Add a bookmark", new_list_path(@list), :class=>"btn btn-primary" %>
+    <%= button_to "", bookmark_path(@list), method: :delete, :class=>"btn btn-danger p-3 fa-solid fa-trash" %>
+  </div>
+  <div class="container">
+    <div class="row">
+      <% @movies.each do |movie| %>
+          <div class="col-3 text-center">
+            <h4><%= movie[:title] %></h4>
+            <%= image_tag movie[:poster_url], alt: movie[:title], :class=>"col-12" %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
